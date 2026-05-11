@@ -1143,6 +1143,11 @@ main {
   max-width: calc(660px + 3.2rem); /* 660 + 2 * 1.6rem */
 }
 
+/* Widen homepage container to fit side-by-side image + bio */
+body:has(.home-split) #main.index.content {
+  max-width: calc(900px + 3.2rem);
+}
+
 /* Non-blog single pages (e.g., privacy, terms) */
 #main.content > article.content {
   max-width: 660px;
@@ -1242,18 +1247,86 @@ main {
   margin-bottom: 0;
 }
 
+/* Soft banner background on the home page only */
+body:has(#main.index.content)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body:has(#main.index.content) #wrapper {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+body:has(#main.index.content) #header,
+body:has(#main.index.content) #main {
+  background-color: transparent;
+}
+
+/* Two-column home layout: headshot left, bio right */
+.home-split {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin: 0 auto;
+}
+
+.home-split .content {
+  max-width: none;
+  margin: 0;
+}
+
+.home-split .content p:first-child {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .home-split {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    justify-items: center;
+  }
+  .home-split .content {
+    text-align: left;
+  }
+}
+
 .home-headshot {
   margin: 0 auto 1.5rem;
   display: flex;
   justify-content: center;
 }
 
+.home-split .home-headshot {
+  margin: 0;
+  width: 100%;
+}
+
 .home-headshot img {
-  max-width: 360px;
+  max-width: 280px;
   width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Circle crop for the home split headshot */
+.home-split .home-headshot img {
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: none;
 }
 
 /* Clickable post item styling */
