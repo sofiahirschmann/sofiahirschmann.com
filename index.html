@@ -3,48 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
-  <!-- User-provided CSS, in this order -->
-  <link rel="stylesheet" href="styles.css">
-  
+  <title>Sofia Hirschmann</title>
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
-<body>
+<body class="home">
 <div id="wrapper">
 <header id="header">
   <div class="site-header">
     <a class="site-mark" href="index.html">SH</a>
-    <!-- Top-right tabs -->
     <div class="nav-group">
       <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
-        <!-- <a href="blog.html">Blog</a> -->
-        <!-- <a href="gallery.html">Gallery</a> -->
-        <a href="contact.html">Contact&nbsp;Me</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 </header>
-<main id="main" class="index content">
-  <div class="logo-container">
-    <p class="home-title">SOFIA HIRSCHMANN</a></p>
-  </div>
 
-  <div class="home-split">
-    <figure class="home-headshot">
-      <img src="headshot2.png" alt="Sofia Hirschmann headshot">
-    </figure>
+<main id="main" class="index content home-main">
 
-    <article class="content">
-      <p>I'm a PhD researcher in Computer Science at Northeastern University, where I work in the CESAR lab building computational models of human behavior and decision-making. My background in Data Science and Cognitive Psychology drew me to research at the intersection of artificial intelligence and cognitive science. I'm interested in how people think, adapt, and collaborate with AI systems, and how we can build smarter, more human-centered technology.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-name">Sofia Hirschmann</h1>
+      <p class="hero-subtitle">PhD researcher studying human–AI collaboration, cognitive modeling, and adaptive intelligent systems.</p>
+      <p class="hero-affiliation">Computer Science · Northeastern University</p>
+    </div>
+  </section>
 
-      <p>Currently, I focus on adaptive AI systems that understand and respond to human reasoning. This includes modeling Theory of Mind in human-robot collaboration, simulating cognitive biases in adversarial settings like cybersecurity, and designing AI agents that calibrate trust through behavioral prediction.</p>
-
-      <p>I'm driven by the challenge of making AI that works with people, understanding our bounded rationality and social dynamics.</p>
-    </article>
-  </div>
+  <!-- About -->
+  <section class="section about">
+    <div class="about-inner">
+      <figure class="about-portrait">
+        <img src="headshot2.png" alt="Sofia Hirschmann">
+      </figure>
+      <div class="about-text">
+        <h2 class="section-title">About</h2>
+        <p>I’m a PhD student in Computer Science at Northeastern University. My work sits at the intersection of cognitive science, human-AI interaction, and computational modeling, with a focus on how humans and intelligent systems coordinate, adapt, and make decisions together.</p>
+        <p>I’m especially interested in Theory of Mind, adaptive systems, human-AI collaboration, and decision-making under uncertainty. More broadly, I’m motivated by questions about how technology can understand people more meaningfully, support human agency, and become a better collaborator in complex social and decision-making contexts.</p>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<footer id="footer" class="site-footer">
+  <p class="footer-line">Sofia Hirschmann · PhD Student, Computer Science</p>
+  <p class="footer-links">
+    <a href="mailto:hirschmann.so@northeastern.edu">Email</a>
+    <span class="footer-dot">·</span>
+    <a href="https://www.linkedin.com/in/sofiadhirschmann/" target="_blank" rel="noopener">LinkedIn</a>
+
+  </p>
+</footer>
 
 </div>
 </body>
