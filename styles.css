@@ -1247,18 +1247,28 @@ body:has(.home-split) #main.index.content {
   margin-bottom: 0;
 }
 
-/* Soft banner background on the home page only */
+/* Establish containing block for the home banner */
+body:has(#main.index.content) {
+  position: relative;
+}
+
+/* Soft banner background on the home page only — anchored to top, fades on scroll */
 body:has(#main.index.content)::before {
   content: "";
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110vh;
   background-image: url("banner.png");
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.12;
+  opacity: 0.14;
   pointer-events: none;
   z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0) 100%);
 }
 
 body:has(#main.index.content) #wrapper {
@@ -2318,3 +2328,511 @@ button.copy-button svg {
 /* GenericTraceback */ .chroma .gt { color:var(--code-red); }
 /* GenericUnderline */ .chroma .gl { text-decoration:underline }
 /* TextWhitespace */ .chroma .w { color: var(--fg4); }
+
+/* ========================================================================
+   Home page — two static sections.
+   Page 1: full-viewport name on one line.
+   Page 2: portrait headshot + bio paragraphs.
+   ======================================================================== */
+
+/* Strip the narrow article container on the home page so the name can
+   stretch across the full viewport. */
+body:has(.page-name) .logo-container { display: none; }
+body:has(.page-name) main { padding-left: 0; padding-right: 0; }
+body:has(.page-name) #main.index.content {
+  max-width: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* ---------------- Page 1: huge one-line name ---------------- */
+.page-name {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  overflow: clip; /* safety net so any sub-pixel overflow doesn't cause horizontal scroll */
+}
+.page-name .name-banner {
+  margin: 0;
+  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 9vw, 24rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--fg1);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ---------------- Page 2: bio ---------------- */
+.page-bio {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+.bio-content {
+  width: min(960px, 92vw);
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+.bio-headshot {
+  margin: 0;
+}
+.bio-headshot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.20);
+}
+.bio-text {
+  max-width: 38em;
+}
+.bio-text p {
+  font-size: clamp(1rem, 1.05vw, 1.12rem);
+  line-height: 1.7;
+  color: var(--fg2);
+  margin: 0 0 1.1rem;
+}
+.bio-text p:last-child { margin-bottom: 0; }
+
+/* Mobile: stack the bio */
+@media (max-width: 720px) {
+  .bio-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bio-headshot {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+/* ========================================================================
+   Refined home page — hero, about, interests, CV callout, contact, footer
+   ======================================================================== */
+
+:root {
+  --accent: #6F8797;
+  --accent-soft: rgba(111, 135, 151, 0.18);
+  --accent-tint: rgba(111, 135, 151, 0.08);
+  --hairline: rgba(0, 0, 0, 0.08);
+}
+
+/* Allow the editorial hero to span much wider */
+body:has(.home-main) #main.index.content {
+  max-width: calc(1100px + 3.2rem);
+}
+
+.home-main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Account for the fixed-ish header in the first viewport of the hero */
+.home-main .hero {
+  min-height: calc(100vh - 64px);
+}
+
+/* ---------------- Hero (full-viewport editorial page) ---------------- */
+.hero {
+  /* Break out to full viewport width so the name can fill the screen */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: clip; /* prevent sub-pixel horizontal scroll */
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.home-main .hero-name {
+  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: clamp(4rem, 10vw, 22rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--fg);
+  margin: 0 0 2rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.home-main .hero-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--fg2);
+  max-width: 40em;
+  margin: 0 auto 0.9rem;
+}
+
+.home-main .hero-affiliation {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg4);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .home-main .hero {
+    padding: 2rem 1rem;
+    min-height: 90vh;
+  }
+  .home-main .hero-name {
+    font-size: clamp(2.4rem, 16vw, 6rem);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ---------------- About (own viewport page, centered) ---------------- */
+.home-main .section.about {
+  /* Full-bleed page like the hero so it gets its own screen */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 5rem 1.5rem;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3.25rem;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.about-portrait {
+  margin: 0;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.about-text {
+  max-width: 38em;
+  text-align: left;
+}
+
+.home-main .about-text .section-title {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin: 0 0 1.1rem;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.home-main .about-text p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--fg1);
+  margin: 0 0 0.9rem;
+}
+
+.home-main .about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.home-main .section.about p {
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .home-main .section.about {
+    min-height: auto;
+    padding: 3.5rem 1rem;
+  }
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    justify-items: center;
+    text-align: left;
+  }
+  .about-portrait img {
+    max-width: 240px;
+  }
+}
+
+/* ---------------- Outline button / link ---------------- */
+.btn-outline,
+a.btn-outline,
+a.btn-outline:link,
+a.btn-outline:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent-soft);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover,
+a.btn-outline:hover {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------------- Generic section ---------------- */
+.home-main .section {
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin: 0 0 1.1rem;
+}
+
+.home-main .section p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--fg1);
+  max-width: 36em;
+  margin: 0 0 0.9rem;
+}
+
+.home-main .section p:last-child {
+  margin-bottom: 0;
+}
+
+/* (.about-short retired — both about paragraphs now share the same styling) */
+
+/* ---------------- Interests pills ---------------- */
+.interest-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.55rem;
+}
+
+.interest-tags li {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: var(--fg2);
+  padding: 0.32rem 0.85rem;
+  border: 1px solid var(--accent-soft);
+  border-radius: 999px;
+  background: var(--accent-tint);
+  line-height: 1.3;
+}
+
+/* ---------------- CV callout ---------------- */
+.cv-callout-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cv-callout-inner p {
+  margin: 0 !important;
+  font-size: 0.98rem !important;
+  color: var(--fg2) !important;
+  max-width: 30em;
+}
+
+.cv-callout-inner .btn-outline {
+  flex-shrink: 0;
+}
+
+.cv-callout-centered {
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 560px) {
+  .cv-callout-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ---------------- Contact mini list ---------------- */
+.contact-mini-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.contact-mini-list li {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-mini-label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg4);
+}
+
+.contact-mini-list a,
+.contact-mini-list a:link,
+.contact-mini-list a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-mini-list a:hover {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .contact-mini-list li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* ---------------- Footer ---------------- */
+.site-footer {
+  margin-top: 2rem;
+  padding: 2rem 0 1rem;
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.site-footer .footer-line {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: var(--fg3);
+  letter-spacing: 0.01em;
+}
+
+.site-footer .footer-links {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: var(--fg4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.site-footer .footer-links a,
+.site-footer .footer-links a:link,
+.site-footer .footer-links a:visited {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer .footer-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-soft);
+}
+
+.site-footer .footer-dot {
+  color: var(--fg4);
+  opacity: 0.6;
+}
+
+/* Override the legacy mobile footer rules for the new minimal footer */
+@media (max-width: 640px) {
+  .site-footer {
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .site-footer .footer-links {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    gap: 0.55rem;
+  }
+}
+
+/* Make sure the home main area sits above the banner */
+.home-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soften default link color inside hero & sections (override global a:link gray) */
+.home-main a:not(.btn-outline):not(.site-mark) {
+  color: var(--accent);
+}
+.home-main a:not(.btn-outline):not(.site-mark):hover {
+  color: var(--accent);
+}
