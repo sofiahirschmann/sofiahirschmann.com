@@ -3,7 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · Sofia Hirschmann</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+  body { margin: 0; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  ::selection { background: rgba(111,135,151,0.18); }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -12,138 +20,270 @@
     <a class="site-mark" href="index.html">SH</a>
     <div class="nav-group">
       <nav class="top-nav">
-       <a href="index.html">Home</a>
-        <a href="cv.html">CV</a>
+        <a href="index.html">Home</a>
+        <a href="cv.html" style="border-bottom:1px solid #6F8797; padding-bottom:2px;">CV</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 </header>
-<main id="main" class="content">
 
-<article class="content resume">
-  <header class="resume-header">
-    <h1 class="resume-name">Sofia Hirschmann</h1>
-  </header>
+  <main style="max-width:860px; margin:0 auto; padding:3.5rem 0 6rem; font-family:Garamond, 'Times New Roman', serif; color:#282828;">
 
-  <section class="resume-section">
-  <h2>Education</h2>
+    <!-- MASTHEAD -->
+    <section>
+      <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; margin-bottom:1rem;">Curriculum Vitae</div>
+      <h1 style="margin:0; font-family:'Cormorant Garamond', Garamond, 'Times New Roman', serif; font-weight:600; font-size:clamp(1.4rem, 2.2vw, 1.7rem); line-height:1.15; letter-spacing:-0.01em; color:#282828;">PhD Candidate, Computer Science</h1>
+      <p style="margin:1.3rem 0 0; font-style:italic; font-size:clamp(1.1rem, 1.5vw, 1.3rem); line-height:1.5; color:#504945;">Northeastern University · Khoury College of Computer Sciences</p>
+    </section>
 
-  <div class="resume-item">
-    <div class="resume-item-header">
-      <h3 class="resume-edu-title">Ph.D. in Computer Science, Northeastern University</h3>
-      <span class="resume-edu-date">Sept. 2023 - May 2028</span>
-    </div>
-    <div class="resume-edu-details">
-      <div class="edu-detail">Awards & Honors: Khoury Distinguished Fellow</div>
-      <div class="edu-detail">Research Focus: Human-AI collaboration and cognitive modeling</div>
-    </div>
-  </div>
+    <!-- RESEARCH FOCUS — lead statement -->
+    <section style="margin-top:3.25rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.6rem; line-height:1.4;">Research Focus</div>
+        <div>
+          <p style="margin:0; font-size:1.5rem; line-height:1.45; color:#3c3836; letter-spacing:-0.005em; text-wrap:pretty;">I build AI systems that form and maintain <em style="color:#246762;">accurate models of the people they interact with</em> (their goals, capabilities, beliefs, and affective states) rather than relying on assumed, static, or one-size-fits-all models of the user.</p>
+          <p style="margin:1.4rem 0 0; font-size:1.08rem; line-height:1.65; color:#6b6866; text-wrap:pretty;">Grounded in computational psychology and Theory of Mind, my work asks how the fidelity of a system's model of a person governs collaboration, trust, and decision-making, studied across five settings:</p>
 
-  <div class="resume-item">
-    <div class="resume-item-header">
-      <h3 class="resume-edu-title">B.S. in Data Science and Cognitive Psychology, Simmons University</h3>
-      <span class="resume-edu-date">Sept. 2019 - May 2023</span>
-    </div>
-    <div class="resume-edu-details">
-      <div class="edu-detail">Awards & Honors: Summa Cum Laude, Honors Program</div>
-      <div class="edu-detail">Minors: Computer Science and Spanish Literature</div>
-    </div>
-  </div>
-</section>
-  
-
-  <section class="resume-section">
-    <h2>Professional Experience</h2>
-    <div class="resume-item">
-      <div class="resume-item-header">
-        <h3>Doctoral Researcher, Northeastern University</h3>
-        <span>Sept. 2023 - Present</span>
+          <!-- five-setting thematic map -->
+          <div style="margin-top:1.75rem; display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:1px; background:rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.08);">
+            <div style="background:#ffffff; padding:0.95rem 0.9rem;">
+              <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.5rem;">Cooperative</div>
+              <div style="font-size:0.98rem; color:#504945; line-height:1.3;">Human–robot teaming</div>
+            </div>
+            <div style="background:#ffffff; padding:0.95rem 0.9rem;">
+              <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.5rem;">Adversarial</div>
+              <div style="font-size:0.98rem; color:#504945; line-height:1.3;">Cognitive cyber defense</div>
+            </div>
+            <div style="background:#ffffff; padding:0.95rem 0.9rem;">
+              <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.5rem;">Affective</div>
+              <div style="font-size:0.98rem; color:#504945; line-height:1.3;">Decision under emotional load</div>
+            </div>
+            <div style="background:#ffffff; padding:0.95rem 0.9rem;">
+              <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.5rem;">Social</div>
+              <div style="font-size:0.98rem; color:#504945; line-height:1.3;">LLM multi-agent role-play</div>
+            </div>
+            <div style="background:#ffffff; padding:0.95rem 0.9rem;">
+              <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.5rem;">Clinical</div>
+              <div style="font-size:0.98rem; color:#504945; line-height:1.3;">Maternal health</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul>
-        <li>Modeled human cognition in cooperative and adversarial AI settings.</li>
-        <li>Built PsychSim-based POMDP and Theory of Mind simulations in Python encoding bounded rationality and cognitive biases (loss aversion, sunk cost, base-rate neglect) to predict network attacker action sequences, validated on red-team traces and synthetic scenarios.</li>
-        <li>Designed large-scale web experiments (1,000+ participants) to study adaptation in human-AI collaboration, using Bayesian inference over human capability and intent to adapt agent behavior.</li>
-        <li>Analyzed behavioral and survey data to derive design guidelines for transparency, coordination, and role signaling in human-robot teams.</li>
-      </ul>
-    </div>
+    </section>
 
-    <div class="resume-item">
-      <div class="resume-item-header">
-        <h3>Applied AI/ML Fellow, Advisor360</h3>
-        <span>Sept. 2025 - Present</span>
+    <!-- EDUCATION -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem;">Education</div>
+        <div style="display:flex; flex-direction:column; gap:1.6rem;">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">Ph.D. in Computer Science</h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">Sept 2023 – May 2028 <span style="color:#a89984;">(exp.)</span></span>
+            </div>
+            <div style="font-size:1.05rem; color:#6b6866; margin-top:0.2rem;">Northeastern University, Khoury College of Computer Sciences</div>
+            <div style="font-size:1rem; color:#817d79; margin-top:0.5rem; line-height:1.5;">Advisor: Stacy Marsella · Cognitive Embodied Social Agents Research (CESAR) Lab · Khoury Distinguished Fellow</div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">B.S. in Data Science &amp; Cognitive Psychology</h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">Sept 2019 – May 2023</span>
+            </div>
+            <div style="font-size:1.05rem; color:#6b6866; margin-top:0.2rem;">Simmons University</div>
+            <div style="font-size:1rem; color:#817d79; margin-top:0.5rem; line-height:1.5;">Summa Cum Laude · Honors Program · Minors: Computer Science and Spanish Literature</div>
+          </div>
+        </div>
       </div>
-      <ul>
-        <li>Built an LLM + RAG Slack triage system to reduce ticket time-to-resolution and overall ticket volume across production and non-production workflows.</li>
-        <li>Translated developer interviews into a routing policy and built an internal service-to-team mapping to power an auto-assignment agent achieving ~80% routing accuracy.</li>
-        <li>Developed an interactive analytics and retrieval agent that summarizes recurring issues and bottlenecks and recommends resolutions by embedding-based matching to historically resolved tickets.</li>
-      </ul>
-    </div>
+    </section>
 
-    <div class="resume-item">
-      <div class="resume-item-header">
-        <h3>Data Science Researcher, MITRE</h3>
-        <span>May 2022 - June 2023</span>
+    <!-- DOCTORAL RESEARCH -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem; line-height:1.4;">Doctoral Research</div>
+        <div>
+          <p style="margin:0 0 2rem; font-size:1.08rem; line-height:1.6; color:#6b6866; font-style:italic;">Thesis direction: accurate modeling of users (Theory of Mind) as the basis for trustworthy human–AI interaction.</p>
+          <div style="display:flex; flex-direction:column; gap:2.1rem;">
+
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:1.3rem;">
+              <div style="font-family:'Cormorant Garamond', Garamond, serif; font-size:2rem; font-weight:500; color:#6F8797; line-height:0.9;">01</div>
+              <div>
+                <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.45rem;">Collaborative Theory of Mind · Human–Robot Teaming</div>
+                <p style="margin:0; font-size:1.06rem; line-height:1.6; color:#3c3836; text-wrap:pretty;">Designed grid-world delivery experiments showing that behavioral implicit communication (BIC) under an inaccurate capability model triggers a <em>"conformity trap"</em>: humans defer to the robot's signaled plan, reinforcing its wrong assumptions. Developed a capability-elicitation framework that recasts alignment as an exploration–exploitation problem, where targeted probing accelerates convergence to an accurate human model and improves team performance.</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:1.3rem;">
+              <div style="font-family:'Cormorant Garamond', Garamond, serif; font-size:2rem; font-weight:500; color:#6F8797; line-height:0.9;">02</div>
+              <div>
+                <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.45rem;">Adversarial Theory of Mind · Cognitive Cyber Defense</div>
+                <p style="margin:0; font-size:1.06rem; line-height:1.6; color:#3c3836; text-wrap:pretty;">Built the <strong style="font-weight:600;">GAMBiT Theory-of-Mind Defender Agent</strong>, a PsychSim-based model that infers a network attacker's latent cognitive vulnerabilities from behavior alone. It maintains alternative explicit mental models, each a candidate bias (loss aversion, base-rate neglect, confirmation bias, sunk-cost, availability) with its own utility function, and updates a probability distribution over them as it observes attacker actions, enabling counterfactual reasoning to drive deception and defensive strategy. Validated in human-subject experiments (n&nbsp;=&nbsp;61) in a simulated enterprise network.</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:1.3rem;">
+              <div style="font-family:'Cormorant Garamond', Garamond, serif; font-size:2rem; font-weight:500; color:#6F8797; line-height:0.9;">03</div>
+              <div>
+                <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.45rem;">Affective Modeling of Decision-Making</div>
+                <p style="margin:0; font-size:1.06rem; line-height:1.6; color:#3c3836; text-wrap:pretty;">Built a web-based escape room and ran an affect-labeling vs. control study identifying behavioral inflection points where unresolved negative affect predicts behavioral collapse, while resolved affect tracks efficient completion, grounding the design of affect-aware interventions that detect bounded-rationality signatures under emotional load.</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:1.3rem;">
+              <div style="font-family:'Cormorant Garamond', Garamond, serif; font-size:2rem; font-weight:500; color:#6F8797; line-height:0.9;">04</div>
+              <div>
+                <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.45rem;">Open-Ended Social Interaction · LLM Multi-Agent Systems</div>
+                <p style="margin:0; font-size:1.06rem; line-height:1.6; color:#3c3836; text-wrap:pretty;">Co-designed the <strong style="font-weight:600;">Virtual Human Improv Library</strong>, a multi-agent (Orchestrator / Director / Actor) LLM framework for social-skills training through improvised role-play, grounded in Stanislavsky's Active Analysis and framing improvisation as real-time Theory of Mind practice.</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:auto 1fr; gap:1.3rem;">
+              <div style="font-family:'Cormorant Garamond', Garamond, serif; font-size:2rem; font-weight:500; color:#6F8797; line-height:0.9;">05</div>
+              <div>
+                <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#6F8797; margin-bottom:0.45rem;">Coordination &amp; Automation in Practice</div>
+                <p style="margin:0; font-size:1.06rem; line-height:1.6; color:#3c3836; text-wrap:pretty;">Analyzed a 10-month LLM-based ticket-routing deployment at a fintech firm to show that automation relocates rather than eliminates articulation work, surfacing how teams negotiate ownership of ambiguous work.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <ul>
-        <li>Automated the National Imagery Interpretability Rating Scale (NIIRS) evaluation workflow in Python, replacing manual scoring with a reproducible ML pipeline.</li>
-        <li>Built a predictive model of tracker performance using a feature set grounded in motion-imagery quality factors and validated on held-out sequences; peer-reviewed results published in IEEE AIPR.</li>
-      </ul>
-    </div>
+    </section>
 
-    <div class="resume-item">
-      <div class="resume-item-header">
-        <h3>Research Assistant, Simmons University</h3>
-        <span>July 2022 - June 2023</span>
+    <!-- INDUSTRY & APPLIED EXPERIENCE -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem; line-height:1.4;">Industry &amp; Applied</div>
+        <div style="display:flex; flex-direction:column; gap:2rem;">
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">Founding Engineer <span style="font-weight:500; color:#817d79;">· Elevare</span></h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">Apr 2026 – Present</span>
+            </div>
+            <div style="font-size:0.98rem; color:#a89984; font-style:italic; margin-top:0.15rem;">Elevare Health is clinical AI infrastructure for maternal care continuity.</div>
+            <ul style="margin:0.7rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Building an agentic orchestration layer that operationalizes evidence-based maternal interventions at scale, built on a clinical protocol engine, safety-critical agentic architecture, human-on-the-loop operations, and a longitudinal maternal dataset that improves personalization and early risk detection with every mother we serve.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Building the product 0→1: scoping the technical roadmap, defining milestones, and standing up the engineering org's SOPs and tooling stack.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Own the architecture and delivery of the platform, including the patient ("mom") model at its core, applying my research on accurate user modeling so each mother's clinical state, needs, and context are represented faithfully rather than with population averages.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Hire and manage engineering contributors; set technical standards, review practices, and development workflow as the founding technical voice.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">Applied AI/ML Fellow <span style="font-weight:500; color:#817d79;">· Advisor360°</span></h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">Sept 2025 – Apr 2026</span>
+            </div>
+            <ul style="margin:0.7rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Built an LLM + RAG Slack triage system to reduce ticket time-to-resolution and overall volume across production and non-production workflows.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Translated developer interviews into a routing policy and an internal service-to-team mapping to power an auto-assignment agent achieving ~80% routing accuracy.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Developed an interactive analytics and retrieval agent that summarizes recurring issues and recommends resolutions via embedding-based matching to historically resolved tickets.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">Data Science Researcher <span style="font-weight:500; color:#817d79;">· MITRE</span></h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">May 2022 – Jun 2023</span>
+            </div>
+            <ul style="margin:0.7rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Automated the National Imagery Interpretability Rating Scale (NIIRS) evaluation workflow in Python, replacing manual scoring with a reproducible ML pipeline.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Built a predictive model of tracker performance using motion-imagery quality factors, validated on held-out sequences; results peer-reviewed and published at IEEE AIPR.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem;">
+              <h3 style="margin:0; font-family:'Cormorant Garamond', Garamond, serif; font-weight:600; font-size:1.45rem; color:#282828;">Research Assistant <span style="font-weight:500; color:#817d79;">· Simmons University</span></h3>
+              <span style="font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:#817d79; white-space:nowrap;">Jul 2022 – Jun 2023</span>
+            </div>
+            <ul style="margin:0.7rem 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Annotated 500+ utterances with PoLaR and supported a prosody-to-intent pipeline in R, extracting prosodic features (pitch, intensity, duration) and training supervised models.</li>
+              <li style="position:relative; padding-left:1.2rem; font-size:1.05rem; line-height:1.55; color:#3c3836;"><span style="position:absolute; left:0; color:#6F8797;">·</span>Ran feature ablations to quantify contributions of rhythm, stress, and intonation to speaker-intent understanding.</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
-      <ul>
-        <li>Annotated 500+ utterances with PoLaR and supported a prosody-to-intent pipeline in R by extracting prosodic features (pitch, intensity, duration) and training supervised models.</li>
-        <li>Ran feature ablations to quantify contributions of rhythm, stress, and intonation to speaker intent understanding.</li>
-      </ul>
-    </div>
+    </section>
 
+    <!-- PUBLICATIONS -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem; line-height:1.4;">Publications &amp; Preprints</div>
+        <div style="display:flex; flex-direction:column; gap:2rem;">
 
-  
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.9rem;">Under Review / In Submission</div>
+            <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.85rem;">
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;"><strong style="font-weight:600;">Hirschmann, S.</strong>, &amp; Marsella, S. From Implicit to Encoded: How LLM-Based Ticket Routing Reshapes Coordination Practices in a Distributed Engineering Team. <span style="font-style:italic; color:#6b6866;">Under review, ACM CSCW 2027.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Aligning Teams across the Human–Artificial Divide: Optimizing Collaboration through Strategic Implicit Communication. <span style="font-style:italic; color:#6b6866;">Under review, HAI 2026.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Affect Labeling and Decision-Making in a Virtual Escape Room: A Behavioral Study. <span style="font-style:italic; color:#6b6866;">Under review, ACII 2026.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Dincer, B., <strong style="font-weight:600;">Hirschmann, S.</strong>, &amp; Marsella, S. Towards a Virtual Human Improv Troupe for Social Skills Training. <span style="font-style:italic; color:#6b6866;">Under submission.</span></li>
+            </ol>
+          </div>
 
-  <section class="resume-section">
-    <h2>Selected Papers &amp; Presentations</h2>
-    <ul>
-      <li><strong>Guarding Against Malicious Biased Threats (GAMBIT):</strong> Co-authored a cognitive-informed cyber defense framework that models attacker decision-making biases to improve attack prediction.</li>
-      <li><strong>Theory of Mind in Human-Robot Task Collaboration:</strong> Presented at CHI ToM Workshop (May 2024); investigated how predictive reasoning and action clarity influence coordination in turn-taking games.</li>
-      <li><strong>Relationship Between Tracking Performance and Video Quality:</strong> First-authored and published at IEEE AIPR (Oct 2022); developed feature-based models linking video quality to automated object tracking.</li>
-      <li><strong>CCSCNE Conference (April 2023):</strong> Presented poster on machine learning methods to extract meaning from prosody in language.</li>
-    </ul>
-  </section>
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.9rem;">Peer-Reviewed</div>
+            <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.85rem;">
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Beltz, B., et al. (incl. <strong style="font-weight:600;">Hirschmann, S.</strong>, &amp; Marsella, S.) (2026). Guarding Against Malicious Biased Threats (GAMBiT): Experimental Design of Cognitive Sensors and Triggers with Behavioral Impact Analysis. <span style="font-style:italic; color:#6b6866;">Computational Brain &amp; Behavior (Springer).</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;"><strong style="font-weight:600;">Hirschmann, S.</strong>, Tanis, J., Irizarry, N., Martin, B. A., Brennan, M., &amp; Irvine, J. M. (2022). The Relationship Between Tracking Performance and Video Quality. <span style="font-style:italic; color:#6b6866;">IEEE AIPR Workshop.</span> &nbsp;<span style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#6F8797;">First author</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Taylor, J., Noboa, N., <strong style="font-weight:600;">Hirschmann, S.</strong>, Tanis, J., Brown, P., &amp; Irvine, J. M. (2023). Investigations into Image Interpretability for Machine Learning.</li>
+            </ol>
+          </div>
 
-  <section class="resume-section">
-    <h2>In the Works</h2>
-    <ul>
-      <li>Preparing paper/journal regarding adversarial and collaborative Theory of Mind.</li>
-      <li>Preparing paper on cognitive biases decision making mechanics in virtual escape room.</li>
-    </ul>
-  </section>
-</article>
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.9rem;">Preprints · arXiv</div>
+            <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:0.85rem;">
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Hans, S., Marsella, S., <strong style="font-weight:600;">Hirschmann, S.</strong>, &amp; Gurney, N. (2025). Security Logs to ATT&amp;CK Insights: Leveraging LLMs for High-Level Threat Understanding and Cognitive Trait Inference. <span style="font-style:italic; color:#6b6866;">arXiv:2510.20930.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Hans, S., Gurney, N., Marsella, S., &amp; <strong style="font-weight:600;">Hirschmann, S.</strong> (2025). Quantifying Loss Aversion in Cyber Adversaries via LLM Analysis. <span style="font-style:italic; color:#6b6866;">arXiv:2508.13240.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Carney, S., Hans, S., <strong style="font-weight:600;">Hirschmann, S.</strong>, Marsella, S., Fonken, Y., Wu, P., &amp; Gurney, N. (2025). Detecting Ambiguity Aversion in Cyberattack Behavior to Inform Cognitive Defense Strategies. <span style="font-style:italic; color:#6b6866;">arXiv:2512.08107.</span></li>
+              <li style="font-size:1.04rem; line-height:1.5; color:#3c3836; text-wrap:pretty;">Kim, R., Carney, S., Fonken, Y., Hans, S., <strong style="font-weight:600;">Hirschmann, S.</strong>, Marsella, S., &amp; Wu, P. (2025). Risk Psychology &amp; Cyber-Attack Tactics. <span style="font-style:italic; color:#6b6866;">arXiv:2510.20657.</span></li>
+            </ol>
+          </div>
 
- <section class="resume-section">
-  <h2>Skills</h2>
-  <ul class="resume-skills">
-    <li><strong>Programming &amp; Tools:</strong> Python, R, SQL, Qualtrics, Lookback, HTML, Git, JavaScript, Figma, Firebase, PsychSim</li>
-    <li><strong>Research:</strong> Theory of Mind, Human-Robot Collaboration, Cognitive Biases, Experimental Design, Contextual Inquiry, Data Annotation, A/B Testing, Usability Testing, Surveys, Statistical Analysis, ML</li>
-    <li><strong>Soft Skills:</strong> Presentation, Leadership, Collaboration, Project Management, Problem Solving</li>
-    <li><strong>Languages:</strong> Bilingual Spanish/English</li>
-    <li><strong>Activities:</strong> Sailing, Skiing, Rock Climbing, Hiking, Analog Photography, Yoga</li>
-  </ul>
-</section>
+        </div>
+      </div>
+    </section>
 
-<section class="resume-section">
-  <h2>Relevant Coursework</h2>
-  <div class="resume-item">
-    <p>Artificial Intelligence, Algorithms, Crtitical Computing, Computational Social Science, HRI, Programming Languages, Data Mining, UX Research, Multivariable Calculus, Linear Algebra, Cognitive Psychology, Research in Cognitive Processes</p>
-  </div>
-</section>
+    <!-- AWARDS -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem;">Awards</div>
+        <div style="display:flex; flex-direction:column; gap:0.6rem;">
+          <div style="display:flex; gap:0.9rem; font-size:1.08rem; color:#3c3836; line-height:1.5;"><span style="color:#6F8797;">·</span>Khoury Distinguished Fellow · Northeastern University</div>
+          <div style="display:flex; gap:0.9rem; font-size:1.08rem; color:#3c3836; line-height:1.5;"><span style="color:#6F8797;">·</span>Summa Cum Laude &amp; Honors Program · Simmons University</div>
+        </div>
+      </div>
+    </section>
 
+    <!-- SKILLS -->
+    <section style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08);">
+      <div style="display:grid; grid-template-columns:minmax(110px,150px) minmax(0,1fr); gap:2.5rem;">
+        <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#6F8797; padding-top:0.3rem;">Skills</div>
+        <div style="display:flex; flex-direction:column; gap:1.3rem;">
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.45rem;">Programming &amp; Tools</div>
+            <div style="font-size:1.06rem; line-height:1.5; color:#3c3836;">Python · R · SQL · JavaScript · HTML · Git · Figma · Firebase · PsychSim · Qualtrics · Lookback</div>
+          </div>
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.45rem;">AI / ML</div>
+            <div style="font-size:1.06rem; line-height:1.5; color:#3c3836;">LLMs &amp; RAG · multi-agent systems · POMDPs &amp; Theory of Mind modeling · Bayesian inference · embedding-based retrieval · experimental ML pipelines</div>
+          </div>
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.45rem;">Research</div>
+            <div style="font-size:1.06rem; line-height:1.5; color:#3c3836;">Theory of Mind · computational psychology · human–robot collaboration · cognitive biases · affective computing · experimental design · contextual inquiry · A/B &amp; usability testing · surveys · statistical analysis · data annotation</div>
+          </div>
+          <div>
+            <div style="font-family:Garamond, 'Times New Roman', serif; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:#a89984; margin-bottom:0.45rem;">Languages</div>
+            <div style="font-size:1.06rem; line-height:1.5; color:#3c3836;">Bilingual Spanish / English</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+  </main>
 </div>
 </body>
 </html>
