@@ -2465,11 +2465,11 @@ body:has(.home-main) #main.index.content {
 }
 
 .home-main .hero-name {
-  font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
-  font-weight: 500;
-  font-size: clamp(4rem, 10vw, 22rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(2.6rem, 7.4vw, 6.3rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
   color: var(--fg);
   margin: 0 0 2rem;
   text-align: center;
@@ -2825,6 +2825,13 @@ a.btn-outline:hover {
 
 /* Make sure the home main area sits above the banner */
 .home-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep header/footer painting above the fixed particle canvas (z-index:0) */
+#header,
+.site-footer {
   position: relative;
   z-index: 1;
 }
