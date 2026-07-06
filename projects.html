@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Sofia Hirschmann</title>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+</head>
+<body class="projects">
+<div id="wrapper">
+<header id="header">
+  <div class="site-header">
+    <a class="site-mark" href="index.html">SH</a>
+    <div class="nav-group">
+      <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="content projects-main">
+
+  <section class="projects-intro">
+    <h1 class="projects-title">Projects</h1>
+  </section>
+
+  <section class="projects-scatter" aria-label="Project gallery">
+
+    <!-- ————— plane-day-path ————— -->
+    <article class="project-tile pos-1"
+             data-src="https://plane-day-path.vercel.app"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Plane Day Path</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Plane Day Path: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Plane Day Path</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Replay one aircraft’s entire day on a seatback-style map, with
+          real ADS-B pings, honest interpolation, and the gaps where no receiver heard it.</p>
+        <p class="tile-meta"><span>plane-day-path</span> · React · Leaflet · OpenSky
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/plane-day-path" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>Opens on a recorded Delta 1 flight-day (JFK → Heathrow → Salt Lake City) from OpenSky
+            Network data and starts replaying immediately. The playback is honest about its data:
+            positions interpolate only between real pings, and coverage gaps are drawn as gaps
+            rather than smoothed over. Live search of arbitrary aircraft works when run locally
+            with OpenSky credentials; the hosted demo ships the saved day because OpenSky blocks
+            cloud IPs.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— spotify-weekly-wrapped ————— -->
+    <article class="project-tile pos-2"
+             data-src="https://spotify-weekly-wrapped.vercel.app"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Weekly Wrapped</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Weekly Wrapped: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Weekly Wrapped</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Spotify Wrapped, but weekly: a shareable stats card
+          and song suggestions built only from your own listening.</p>
+        <p class="tile-meta"><span>spotify-weekly-wrapped</span> · Next.js · PKCE
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/spotify-weekly-wrapped" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>Connect Spotify and get a weekly card: top track, most-replayed artist, a
+            listening-minutes estimate, and one personality line, rendered as an image you can
+            post. Auth is OAuth PKCE with no database and no server-side account store, and the UI
+            is transparent about which stat comes from which data window, since Spotify only
+            exposes the last fifty plays.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— particle-sandbox ————— -->
+    <article class="project-tile pos-3"
+             data-src="https://sofiahirschmann.github.io/particle-sandbox/"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Particle Sandbox</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Particle Sandbox: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Particle Sandbox</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Thousands of glowing particles under hand-written Verlet physics.
+          No framework, no physics library.</p>
+        <p class="tile-meta"><span>particle-sandbox</span> · Vanilla JS · Canvas
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/particle-sandbox" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>The physics is the project: Verlet integration at a fixed 120&nbsp;Hz timestep with
+            render-time interpolation, a spatial hash grid over flat typed arrays so
+            particle–particle collisions stay tractable at 20k particles, and zero allocation in
+            the hot loop. Attract and repel with mouse or finger; tune gravity, bounciness, and
+            trails live.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— cyoa-state-machine ————— -->
+    <article class="project-tile pos-4"
+             data-src="https://sofiahirschmann.github.io/cyoa-state-machine/"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">The Keeper’s Last Night</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open The Keeper's Last Night: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">The Keeper’s Last Night</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">A choose-your-own-adventure played beside a live view of its own
+          state machine. Your path lights up as you move through the story.</p>
+        <p class="tile-meta"><span>cyoa-state-machine</span> · JavaScript · SVG
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/cyoa-state-machine" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>A haunted-lighthouse mystery with 22 nodes, six endings, and one choice that only exists
+            if you picked something up earlier. The second panel is the story’s actual state graph,
+            not an illustration of it: the current node and every traveled edge light up live, and
+            Undo un-lights them. The state machine is the visualization.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— vibe-translator ————— -->
+    <article class="project-tile pos-5"
+             data-src="https://vibe-translator-sigma.vercel.app"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Vibe Translator</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Vibe Translator: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Vibe Translator</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Paste any text, pick a vibe (corporate, Shakespearean,
+          passive-aggressive HR), and watch the rewrite stream in word by word.</p>
+        <p class="tile-meta"><span>vibe-translator</span> · React · Claude · SSE
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/vibe-translator" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>A single serverless function receives the text and style, calls the Anthropic API, and
+            streams the rewrite back over server-sent events. The API key never ships to the client.
+            Each style is a system prompt plus one or two few-shot examples, which do the heavy
+            lifting for voice consistency. The streaming is most of the fun.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— signal-scout ————— -->
+    <article class="project-tile pos-6"
+             data-src="https://sofiahirschmann.github.io/signal-scout/"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Signal Scout</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Signal Scout: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Signal Scout</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">ML day-trading signals for a stock watchlist: walk-forward
+          gradient boosting, a backtester, and this static dashboard of the results.</p>
+        <p class="tile-meta"><span>signal-scout</span> · Python · Vite
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/signal-scout" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>The Python engine computes ~15 technical indicators and trains a walk-forward
+            gradient-boosting model per ticker, so the model never sees the future it predicts.
+            The backtester replays out-of-sample predictions against buy-and-hold (total return,
+            Sharpe, max drawdown, win rate), and the dashboard shows today’s signals with charts
+            and equity curves. Research tool, not financial advice; it says so itself.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— outfit-from-a-vibe ————— -->
+    <article class="project-tile pos-7"
+             data-src="https://outfit-from-a-vibe.vercel.app"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Outfit From a Vibe</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Outfit From a Vibe: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Outfit From a Vibe</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Type a vibe like “dark academia but rain-proof” and get three
+          cohesive, rentable outfits, presented by a loving parody of Cher’s closet computer.</p>
+        <p class="tile-meta"><span>outfit-from-a-vibe</span> · React · Claude
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/outfit-from-a-vibe" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>The interesting problem is coherence: pieces that look good <em>together</em>, not
+            just pieces that individually match the vibe. That part is deliberately not an
+            LLM. A model call turns the vibe into structured attributes; hand-written stylist logic
+            assembles the outfits from Nuuly’s catalog, and every piece links to its live product
+            page.</p>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ————— Featured research: CogVuln ————— -->
+  <section class="research-feature">
+    <p class="section-title">Research</p>
+    <div class="research-inner">
+      <div class="research-text">
+        <h2 class="research-name">CogVuln</h2>
+        <p class="research-desc">A cyber attack modeled as a game between two agents with minds.
+          Red, the attacker, works a reconnaissance-to-compromise kill chain, but can be endowed
+          with human decision biases like base-rate neglect, loss aversion, and the sunk-cost
+          fallacy. Blue, the defender, watches Red act and performs Bayesian inference over
+          hypotheses about <em>which</em> bias is distorting Red’s choices, turning an
+          attacker’s psychology into a defensive signal.</p>
+        <p class="tile-meta"><span>CogVuln</span> · Python · PsychSim · Bayesian inference</p>
+      </div>
+      <div class="research-links">
+        <a class="btn-outline" href="https://github.com/sofiahirschmann/CogVuln" target="_blank" rel="noopener">View on GitHub&nbsp;↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" class="site-footer">
+  <p class="footer-line">Sofia Hirschmann · PhD Student, Computer Science</p>
+  <p class="footer-links">
+    <a href="mailto:hirschmann.so@northeastern.edu">Email</a>
+    <span class="footer-dot">·</span>
+    <a href="https://www.linkedin.com/in/sofiadhirschmann/" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="footer-dot">·</span>
+    <a href="https://github.com/sofiahirschmann" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</footer>
+
+</div>
+
+<!-- Detail lightbox: one dialog reused for every tile -->
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-frame">
+    <header class="dialog-header">
+      <div>
+        <h2 class="dialog-title" id="dialog-title"></h2>
+        <p class="dialog-meta tile-meta"></p>
+      </div>
+      <button class="dialog-close" type="button" autofocus aria-label="Close">×</button>
+    </header>
+    <div class="dialog-screen">
+      <iframe class="dialog-iframe" title="" loading="lazy"></iframe>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-desc"></div>
+      <p class="dialog-links">
+        <a class="btn-outline dialog-github" href="#" target="_blank" rel="noopener">View source&nbsp;↗</a>
+        <a class="btn-outline dialog-live" href="#" target="_blank" rel="noopener">Open live site&nbsp;↗</a>
+      </p>
+    </div>
+  </div>
+</dialog>
+
+<script src="projects.js" defer></script>
+</body>
+</html>

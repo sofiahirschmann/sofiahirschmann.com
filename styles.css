@@ -2852,3 +2852,369 @@ a.btn-outline:hover {
 .home-main a:not(.btn-outline):not(.site-mark):hover {
   color: var(--accent);
 }
+
+/* ========================================================================
+   Projects page — living gallery, scattered
+   Uniform website-shaped tiles (16:10) placed loosely across the page like
+   works on a gallery wall. Each embeds its real deployed app, scaled down.
+   Scoped under body.projects so nothing collides with the home/CV rules.
+   ======================================================================== */
+
+body.projects #main.projects-main {
+  max-width: calc(1160px + 3.2rem);
+  padding: 1rem 1.6rem 0;
+}
+
+/* ---------------- Intro ---------------- */
+.projects-intro {
+  padding: 4rem 0 4.5rem;
+  text-align: center;
+}
+
+.projects-title {
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin: 0;
+}
+
+/* ---------------- Scattered gallery ---------------- */
+.projects-scatter {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 1.6rem;
+  row-gap: 10rem;
+  align-items: start;
+  padding-bottom: 6rem;
+}
+
+/* Loose placement: alternating sides, uneven vertical offsets.
+   Side-by-side tiles always keep at least two empty columns between them. */
+.project-tile.pos-1 { grid-column: 1 / span 5; }
+.project-tile.pos-2 { grid-column: 8 / span 4; margin-top: 9rem; }
+.project-tile.pos-3 { grid-column: 5 / span 4; }
+.project-tile.pos-4 { grid-column: 1 / span 4; }
+.project-tile.pos-5 { grid-column: 8 / span 5; margin-top: 11rem; }
+.project-tile.pos-6 { grid-column: 2 / span 4; }
+.project-tile.pos-7 { grid-column: 9 / span 4; margin-top: 8rem; }
+
+/* Entrance: tiles rise in as they reach the viewport (JS adds .in-view). */
+body.js-anim .project-tile {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease var(--enter-delay, 0ms),
+              transform 0.7s ease var(--enter-delay, 0ms);
+}
+
+body.js-anim .project-tile.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------------- Labels around the screen ---------------- */
+.tile-name {
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.2vw, 2.05rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0 0 0.7rem;
+}
+
+.tile-click {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--fg4);
+  margin: 0.7rem 0 0;
+}
+
+/* ---------------- The screen (button wrapping the live app) ---------------- */
+.tile-screen {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: #fbfbfa;
+  overflow: hidden;
+  cursor: pointer;
+  font: inherit;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tile-screen:hover,
+.tile-screen:focus-visible {
+  border-color: var(--accent-soft);
+  box-shadow: 0 18px 44px rgba(40, 40, 40, 0.14);
+  transform: translateY(-3px);
+}
+
+.tile-screen:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Poster: quiet placeholder shown until the live app has booted. */
+.tile-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  z-index: 2;
+  background: #fbfbfa;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.poster-name {
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  letter-spacing: -0.01em;
+  color: var(--fg2);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.poster-rule {
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+.poster-status {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg5);
+}
+
+.project-tile.is-live .tile-poster {
+  opacity: 0;
+}
+
+/* Viewport: the live app at natural size, scaled down to fit the tile. */
+.tile-viewport {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tile-iframe {
+  border: 0;
+  transform: scale(var(--s, 0.3));
+  transform-origin: top left;
+  pointer-events: none;    /* scattered miniatures are inert; the button is the control */
+  display: block;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  background: #fff;
+}
+
+.project-tile.is-live .tile-iframe {
+  opacity: 1;
+}
+
+/* Meta / description live in the dialog; hidden container feeds it. */
+.tile-meta {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--fg4);
+  margin: 0;
+}
+
+.tile-meta > span {
+  color: var(--accent);
+}
+
+/* ---------------- Featured research (the paper among the machines) -------- */
+.research-feature {
+  border-top: 1px solid var(--hairline);
+  padding: 3rem 0 5rem;
+}
+
+.research-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: end;
+  max-width: 900px;
+}
+
+.research-name {
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  color: var(--fg);
+  margin: 0 0 0.8rem;
+}
+
+.research-desc {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--fg1);
+  max-width: 44em;
+  margin: 0 0 0.8rem;
+}
+
+/* ---------------- Detail lightbox ---------------- */
+.project-dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  width: min(1080px, 94vw);
+  max-height: 92vh;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3);
+}
+
+.project-dialog::backdrop {
+  background: rgba(20, 22, 24, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.dialog-frame {
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem 0.9rem;
+}
+
+.dialog-title {
+  font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--fg);
+  margin: 0 0 0.25rem;
+}
+
+.dialog-close {
+  border: 1px solid var(--hairline);
+  background: transparent;
+  border-radius: 999px;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dialog-close:hover,
+.dialog-close:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+
+.dialog-screen {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: #fbfbfa;
+}
+
+.dialog-iframe {
+  border: 0;
+  width: 100%;
+  height: min(62vh, 640px);
+  display: block;
+  background: #fff;
+}
+
+.dialog-body {
+  padding: 1.1rem 1.4rem 1.3rem;
+  overflow-y: auto;
+}
+
+.dialog-desc p {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--fg1);
+  max-width: 60em;
+  margin: 0 0 0.8rem;
+}
+
+.dialog-desc .dialog-lede {
+  font-style: italic;
+  color: var(--fg2);
+}
+
+.dialog-links {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 0.2rem 0 0;
+}
+
+/* ---------------- Responsive ---------------- */
+/* Tablet: keep a hint of the scatter — alternate sides, drop the offsets. */
+@media (max-width: 900px) {
+  .projects-scatter {
+    row-gap: 4.5rem;
+  }
+  .project-tile { margin-top: 0 !important; }
+  .project-tile.pos-1, .project-tile.pos-4, .project-tile.pos-6 {
+    grid-column: 1 / span 8;
+  }
+  .project-tile.pos-2, .project-tile.pos-5, .project-tile.pos-7 {
+    grid-column: 5 / span 8;
+  }
+  .project-tile.pos-3 { grid-column: 3 / span 8; }
+}
+
+@media (max-width: 620px) {
+  .projects-intro { padding: 3rem 0 2.5rem; }
+  .projects-scatter { row-gap: 3.2rem; }
+  .project-tile.pos-1, .project-tile.pos-2, .project-tile.pos-3,
+  .project-tile.pos-4, .project-tile.pos-5, .project-tile.pos-6,
+  .project-tile.pos-7 {
+    grid-column: 1 / -1;
+  }
+  .dialog-header,
+  .dialog-body { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Quality floor: no motion for users who ask for none. */
+@media (prefers-reduced-motion: reduce) {
+  body.js-anim .project-tile,
+  .tile-screen,
+  .tile-poster,
+  .tile-iframe {
+    transition: none;
+  }
+  body.js-anim .project-tile {
+    opacity: 1;
+    transform: none;
+  }
+  .tile-screen:hover,
+  .tile-screen:focus-visible {
+    transform: none;
+  }
+}
