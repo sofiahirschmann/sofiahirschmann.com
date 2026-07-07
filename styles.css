@@ -690,6 +690,13 @@ hr {
     left: 0.5rem;
     right: 0.5rem;
     z-index: 1000;
+    /* Promote the fixed header to its own GPU compositing layer so it isn't
+       repainted in lockstep with heavy, constantly-animating page content
+       (the projects page's lazy iframes + entrance transforms), which made it
+       visibly jitter/"bounce" during scroll. */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
   }
   /* Offset content so it doesn't hide under the now out-of-flow header
      (matches the mobile padding-top approach below). */
