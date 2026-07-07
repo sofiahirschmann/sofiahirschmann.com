@@ -677,13 +677,24 @@ hr {
     padding-left: 0.33rem;
     padding-right: 0.33rem;
   }
-  /* Sticky header on desktop: stays pinned to the top on scroll.
-     (Mobile already uses a fixed .site-header below.) #wrapper prefix raises
-     specificity to beat the later "#header { position: relative }" rule. */
+  /* Fixed header on desktop: pinned to the top and guaranteed not to move.
+     `sticky` proved unreliable here (it's a flex child of #wrapper, and
+     sticky-in-flex intermittently fails in Safari / near the breakpoint),
+     so we use `fixed` like the mobile header. left/right match #wrapper's
+     0.5rem padding so nav content keeps its exact horizontal position.
+     #wrapper prefix raises specificity to beat the later
+     "#header { position: relative }" rule. */
   #wrapper #header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0.5rem;
+    right: 0.5rem;
     z-index: 1000;
+  }
+  /* Offset content so it doesn't hide under the now out-of-flow header
+     (matches the mobile padding-top approach below). */
+  #wrapper {
+    padding-top: 54px;
   }
 }
 
