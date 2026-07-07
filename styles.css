@@ -251,6 +251,35 @@ body.darkmode #header .navbar-logo a:hover {
   margin-left: auto;
 }
 
+/* Left side of the header: SH monogram + social icons */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--fg1);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.social-icons a:hover {
+  opacity: 1;
+  color: #6F8797;
+}
+.social-icons svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 .resume-header {
   margin-bottom: 1.5rem;
 }
@@ -398,7 +427,7 @@ body.darkmode #header .navbar-logo a:hover {
   font-style: normal;
   color: var(--fg1) !important;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
   letter-spacing: -0.01em;
   transition: opacity 0.3s ease-in-out;
   display: flex;
@@ -1280,6 +1309,24 @@ body:has(#main.index.content) #wrapper {
 body:has(#main.index.content) #header,
 body:has(#main.index.content) #main {
   background-color: transparent;
+}
+
+/* Homepage: paint a solid white band behind the top nav so the particle
+   field doesn't wash out the links. Desktop only — the mobile header is
+   already a fixed white bar. The ::before bleeds 0.5rem past each side to
+   cover the wrapper's horizontal padding, reaching the viewport edges, and
+   sits behind the SH and links (z-index below content, above the canvas). */
+@media screen and (min-width: 769px) {
+  body:has(#main.index.content) .site-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.5rem;
+    right: -0.5rem;
+    background-color: var(--bg);
+    z-index: -1;
+  }
 }
 
 /* Two-column home layout: headshot left, bio right */
