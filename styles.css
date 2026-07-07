@@ -2894,12 +2894,12 @@ body.projects #main.projects-main {
 /* Loose placement: alternating sides, uneven vertical offsets.
    Side-by-side tiles always keep at least two empty columns between them. */
 .project-tile.pos-1 { grid-column: 1 / span 5; }
-.project-tile.pos-2 { grid-column: 8 / span 4; margin-top: 9rem; }
-.project-tile.pos-3 { grid-column: 5 / span 4; }
-.project-tile.pos-4 { grid-column: 1 / span 4; }
+.project-tile.pos-2 { grid-column: 8 / span 5; margin-top: 9rem; }
+.project-tile.pos-3 { grid-column: 4 / span 5; }
+.project-tile.pos-4 { grid-column: 1 / span 5; }
 .project-tile.pos-5 { grid-column: 8 / span 5; margin-top: 11rem; }
-.project-tile.pos-6 { grid-column: 2 / span 4; }
-.project-tile.pos-7 { grid-column: 9 / span 4; margin-top: 8rem; }
+.project-tile.pos-6 { grid-column: 1 / span 5; }
+.project-tile.pos-7 { grid-column: 8 / span 5; margin-top: 8rem; }
 
 /* Entrance: tiles rise in as they reach the viewport (JS adds .in-view). */
 body.js-anim .project-tile {

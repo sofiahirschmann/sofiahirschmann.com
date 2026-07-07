@@ -33,8 +33,38 @@
 
   <section class="projects-scatter" aria-label="Project gallery">
 
-    <!-- ————— plane-day-path ————— -->
+    <!-- ————— outfit-from-a-vibe ————— -->
     <article class="project-tile pos-1"
+             data-src="https://outfit-from-a-vibe.vercel.app"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Outfit From a Vibe</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Outfit From a Vibe: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Outfit From a Vibe</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">Type a vibe like “dark academia but rain-proof” and get three
+          cohesive, rentable outfits, presented by a loving parody of Cher’s closet computer.</p>
+        <p class="tile-meta"><span>outfit-from-a-vibe</span> · React · Claude
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/outfit-from-a-vibe" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>The interesting problem is coherence: pieces that look good <em>together</em>, not
+            just pieces that individually match the vibe. That part is deliberately not an
+            LLM. A model call turns the vibe into structured attributes; hand-written stylist logic
+            assembles the outfits from Nuuly’s catalog, and every piece links to its live product
+            page.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— plane-day-path ————— -->
+    <article class="project-tile pos-2"
              data-src="https://plane-day-path.vercel.app"
              data-vw="1280" data-vh="800">
       <h2 class="tile-name">Plane Day Path</h2>
@@ -64,15 +94,15 @@
       </div>
     </article>
 
-    <!-- ————— spotify-weekly-wrapped ————— -->
-    <article class="project-tile pos-2"
-             data-src="https://spotify-weekly-wrapped.vercel.app"
+    <!-- ————— chord-garden ————— -->
+    <article class="project-tile pos-3"
+             data-src="https://sofiahirschmann.github.io/chord-garden/"
              data-vw="1280" data-vh="800">
-      <h2 class="tile-name">Weekly Wrapped</h2>
+      <h2 class="tile-name">Chord Garden</h2>
       <button class="tile-screen" type="button" aria-haspopup="dialog"
-              aria-label="Open Weekly Wrapped: live demo and details">
+              aria-label="Open Chord Garden: live demo and details">
         <span class="tile-poster" aria-hidden="true">
-          <span class="poster-name">Weekly Wrapped</span>
+          <span class="poster-name">Chord Garden</span>
           <span class="poster-rule"></span>
           <span class="poster-status">loading live demo</span>
         </span>
@@ -80,22 +110,54 @@
       </button>
       <p class="tile-click" aria-hidden="true">(click me)</p>
       <div class="tile-info" hidden>
-        <p class="tile-desc">Spotify Wrapped, but weekly: a shareable stats card
-          and song suggestions built only from your own listening.</p>
-        <p class="tile-meta"><span>spotify-weekly-wrapped</span> · Next.js · PKCE
-          <a class="tile-repo" href="https://github.com/sofiahirschmann/spotify-weekly-wrapped" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <p class="tile-desc">Plant chords in a garden and feed it music to make it grow:
+          a from-scratch Web Audio synth plus a live music-theory tension trellis.</p>
+        <p class="tile-meta"><span>chord-garden</span> · Vanilla JS · Web Audio
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/chord-garden" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
         <div class="tile-detail">
-          <p>Connect Spotify and get a weekly card: top track, most-replayed artist, a
-            listening-minutes estimate, and one personality line, rendered as an image you can
-            post. Auth is OAuth PKCE with no database and no server-side account store, and the UI
-            is transparent about which stat comes from which data window, since Spotify only
-            exposes the last fifty plays.</p>
+          <p>Every chord you play sows a plant and lights up a tension trellis, a
+            circle-of-fifths ring where each chord’s pull toward the next is drawn as a vine.
+            Plant a G7 and the vine to C throbs until you satisfy it; resolve, and the tonic’s
+            plant bursts into bloom. Resolving progressions feeds the garden, wandering leaves
+            seedlings, and different chord qualities grow different species. All sound is
+            synthesized from scratch with the Web Audio API. No goal, no score: a toy that
+            secretly teaches functional harmony.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ————— signal-scout ————— -->
+    <article class="project-tile pos-4"
+             data-src="https://sofiahirschmann.github.io/signal-scout/"
+             data-vw="1280" data-vh="800">
+      <h2 class="tile-name">Signal Scout</h2>
+      <button class="tile-screen" type="button" aria-haspopup="dialog"
+              aria-label="Open Signal Scout: live demo and details">
+        <span class="tile-poster" aria-hidden="true">
+          <span class="poster-name">Signal Scout</span>
+          <span class="poster-rule"></span>
+          <span class="poster-status">loading live demo</span>
+        </span>
+        <span class="tile-viewport" aria-hidden="true"></span>
+      </button>
+      <p class="tile-click" aria-hidden="true">(click me)</p>
+      <div class="tile-info" hidden>
+        <p class="tile-desc">ML day-trading signals for a stock watchlist: walk-forward
+          gradient boosting, a backtester, and this static dashboard of the results.</p>
+        <p class="tile-meta"><span>signal-scout</span> · Python · Vite
+          <a class="tile-repo" href="https://github.com/sofiahirschmann/signal-scout" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
+        <div class="tile-detail">
+          <p>The Python engine computes ~15 technical indicators and trains a walk-forward
+            gradient-boosting model per ticker, so the model never sees the future it predicts.
+            The backtester replays out-of-sample predictions against buy-and-hold (total return,
+            Sharpe, max drawdown, win rate), and the dashboard shows today’s signals with charts
+            and equity curves. Research tool, not financial advice; it says so itself.</p>
         </div>
       </div>
     </article>
 
     <!-- ————— particle-sandbox ————— -->
-    <article class="project-tile pos-3"
+    <article class="project-tile pos-5"
              data-src="https://sofiahirschmann.github.io/particle-sandbox/"
              data-vw="1280" data-vh="800">
       <h2 class="tile-name">Particle Sandbox</h2>
@@ -125,7 +187,7 @@
     </article>
 
     <!-- ————— cyoa-state-machine ————— -->
-    <article class="project-tile pos-4"
+    <article class="project-tile pos-6"
              data-src="https://sofiahirschmann.github.io/cyoa-state-machine/"
              data-vw="1280" data-vh="800">
       <h2 class="tile-name">The Keeper’s Last Night</h2>
@@ -154,7 +216,7 @@
     </article>
 
     <!-- ————— vibe-translator ————— -->
-    <article class="project-tile pos-5"
+    <article class="project-tile pos-7"
              data-src="https://vibe-translator-sigma.vercel.app"
              data-vw="1280" data-vh="800">
       <h2 class="tile-name">Vibe Translator</h2>
@@ -178,66 +240,6 @@
             streams the rewrite back over server-sent events. The API key never ships to the client.
             Each style is a system prompt plus one or two few-shot examples, which do the heavy
             lifting for voice consistency. The streaming is most of the fun.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- ————— signal-scout ————— -->
-    <article class="project-tile pos-6"
-             data-src="https://sofiahirschmann.github.io/signal-scout/"
-             data-vw="1280" data-vh="800">
-      <h2 class="tile-name">Signal Scout</h2>
-      <button class="tile-screen" type="button" aria-haspopup="dialog"
-              aria-label="Open Signal Scout: live demo and details">
-        <span class="tile-poster" aria-hidden="true">
-          <span class="poster-name">Signal Scout</span>
-          <span class="poster-rule"></span>
-          <span class="poster-status">loading live demo</span>
-        </span>
-        <span class="tile-viewport" aria-hidden="true"></span>
-      </button>
-      <p class="tile-click" aria-hidden="true">(click me)</p>
-      <div class="tile-info" hidden>
-        <p class="tile-desc">ML day-trading signals for a stock watchlist: walk-forward
-          gradient boosting, a backtester, and this static dashboard of the results.</p>
-        <p class="tile-meta"><span>signal-scout</span> · Python · Vite
-          <a class="tile-repo" href="https://github.com/sofiahirschmann/signal-scout" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
-        <div class="tile-detail">
-          <p>The Python engine computes ~15 technical indicators and trains a walk-forward
-            gradient-boosting model per ticker, so the model never sees the future it predicts.
-            The backtester replays out-of-sample predictions against buy-and-hold (total return,
-            Sharpe, max drawdown, win rate), and the dashboard shows today’s signals with charts
-            and equity curves. Research tool, not financial advice; it says so itself.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- ————— outfit-from-a-vibe ————— -->
-    <article class="project-tile pos-7"
-             data-src="https://outfit-from-a-vibe.vercel.app"
-             data-vw="1280" data-vh="800">
-      <h2 class="tile-name">Outfit From a Vibe</h2>
-      <button class="tile-screen" type="button" aria-haspopup="dialog"
-              aria-label="Open Outfit From a Vibe: live demo and details">
-        <span class="tile-poster" aria-hidden="true">
-          <span class="poster-name">Outfit From a Vibe</span>
-          <span class="poster-rule"></span>
-          <span class="poster-status">loading live demo</span>
-        </span>
-        <span class="tile-viewport" aria-hidden="true"></span>
-      </button>
-      <p class="tile-click" aria-hidden="true">(click me)</p>
-      <div class="tile-info" hidden>
-        <p class="tile-desc">Type a vibe like “dark academia but rain-proof” and get three
-          cohesive, rentable outfits, presented by a loving parody of Cher’s closet computer.</p>
-        <p class="tile-meta"><span>outfit-from-a-vibe</span> · React · Claude
-          <a class="tile-repo" href="https://github.com/sofiahirschmann/outfit-from-a-vibe" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
-        <div class="tile-detail">
-          <p>The interesting problem is coherence: pieces that look good <em>together</em>, not
-            just pieces that individually match the vibe. That part is deliberately not an
-            LLM. A model call turns the vibe into structured attributes; hand-written stylist logic
-            assembles the outfits from Nuuly’s catalog, and every piece links to its live product
-            page.</p>
         </div>
       </div>
     </article>
