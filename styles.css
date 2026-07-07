@@ -251,11 +251,12 @@ body.darkmode #header .navbar-logo a:hover {
   margin-left: auto;
 }
 
-/* Left side of the header: SH monogram + social icons */
+/* Left side of the header: SH monogram + nav links.
+   Gap matches .top-nav's internal gap so SH, Projects and CV are evenly spaced. */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
   height: 100%;
 }
 .social-icons {
