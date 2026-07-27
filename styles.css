@@ -3150,6 +3150,39 @@ body.js-anim .project-tile.in-view {
   margin: 0 0 0.8rem;
 }
 
+/* Solo view: the research feature is the whole page, so it stands on its own
+   centred column instead of sitting as a footnote under the gallery. */
+.research-feature.research-solo {
+  border-top: none;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 7rem;
+}
+
+.research-solo .research-inner {
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  align-items: start;
+  max-width: none;
+}
+
+.research-solo .research-name {
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+}
+
+.research-solo .research-links {
+  justify-self: start;
+}
+
+.research-aside {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--fg2);
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+
 /* ---------------- Detail lightbox ---------------- */
 .project-dialog {
   border: none;
