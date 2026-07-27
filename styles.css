@@ -2946,10 +2946,12 @@ body.projects #main.projects-main {
   text-align: center;
 }
 
-.projects-title {
+/* `body.projects` prefix outranks the generic `.content h1` rule (font-size
+   1.75rem), which otherwise wins on specificity and flattens the page title. */
+body.projects .projects-title {
   font-family: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
   font-weight: 600;
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-size: 2rem;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--fg);
@@ -3161,13 +3163,22 @@ body.js-anim .project-tile.in-view {
 
 .research-solo .research-inner {
   grid-template-columns: 1fr;
-  gap: 1.8rem;
+  gap: 1.6rem;
   align-items: start;
   max-width: none;
 }
 
+/* The page title is the only large type here. "Research" and the project name
+   read as one stacked label above the abstract, so they sit at the same small
+   scale and are told apart by case, colour, and face rather than by size. */
+.research-solo .section-title {
+  margin-bottom: 0.25rem;
+}
+
 .research-solo .research-name {
-  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.25rem;
 }
 
 .research-solo .research-links {
