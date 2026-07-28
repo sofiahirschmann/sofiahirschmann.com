@@ -3158,7 +3158,18 @@ body.js-anim .project-tile.in-view {
   border-top: none;
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 0 7rem;
+  padding: 0 0 3.25rem;
+}
+
+/* Stacked entries (research, then writing) share the column; a hairline is the
+   only thing between them, so each eyebrow starts a section without shouting. */
+.research-solo + .research-solo {
+  border-top: 1px solid var(--hairline);
+  padding-top: 3.25rem;
+}
+
+.research-solo:last-of-type {
+  padding-bottom: 6rem;
 }
 
 .research-solo .research-inner {
@@ -3177,8 +3188,11 @@ body.js-anim .project-tile.in-view {
 
 .research-solo .research-name {
   font-size: 1.15rem;
+  line-height: 1.35;      /* titles that wrap to two lines need the leading */
   letter-spacing: 0.01em;
   margin-bottom: 1.25rem;
+  max-width: 34em;
+  text-wrap: balance;     /* even lines instead of a one-word second line */
 }
 
 .research-solo .research-links {
