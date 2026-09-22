@@ -2600,32 +2600,27 @@ body:has(.home-main) #main.index.content {
 
 .about-inner {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
   align-items: start;
-  max-width: 980px;
+  max-width: 720px;
   width: 100%;
 }
 
+/* Full horizontal portrait spanning the column above the bio */
 .about-portrait {
   margin: 0;
-  /* keep the portrait alongside the bio as it scrolls */
-  position: sticky;
-  top: 6rem;
 }
 
 .about-portrait img {
   display: block;
   width: 100%;
-  max-width: 300px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  height: auto;
   border-radius: 4px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
 .about-text {
-  max-width: 40em;
   text-align: left;
 }
 
@@ -2653,7 +2648,9 @@ body:has(.home-main) #main.index.content {
 }
 
 .home-main .section.about p {
-  text-align: left;
+  max-width: none;
+  text-align: justify;
+  hyphens: auto;
 }
 
 @media (max-width: 720px) {
@@ -2666,13 +2663,6 @@ body:has(.home-main) #main.index.content {
     gap: 1.75rem;
     justify-items: center;
     text-align: left;
-  }
-  .about-portrait {
-    position: static;
-    top: auto;
-  }
-  .about-portrait img {
-    max-width: 240px;
   }
 }
 
